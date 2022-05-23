@@ -5,8 +5,6 @@ from turtle import color
 from PIL import ImageTk, Image
 from halo import Halo
 
-from cv2 import COLOR_BGR2BGR555
-
 import constants
 
 def recommend():

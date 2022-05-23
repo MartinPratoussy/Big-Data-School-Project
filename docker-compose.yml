@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  import_csv:
+    build:
+      context: import_csv
+      dockerfile: Dockerfile
+    container_name: import_csv
+    volumes:
+      - ./Resources:/usr/src/project/Resources
+
+  colors_clustering:
+    depends_on:
+      - import_csv
+    build:
+      context: colors_clustering
+      dockerfile: Dockerfile
+    container_name: colors_clustering
+    volumes:
+      - ./Resources:/usr/src/project/Resources
+
+  favorites:
+    depends_on:
+      - colors_clustering
+    build:
+      context: favorites
+      dockerfile: Dockerfile
+    container_name: favorites
+    volumes:
+      - ./Resources:/usr/src/project/Resources
+
+  recommendations:
+    depends_on:
+      - favorites
+    build:
+      context: recommendations
+      dockerfile: Dockerfile
+    container_name: recommendations
+    volumes:
+      - ./Resources:/usr/src/project/Resources
+
+  graphs:
+    depends_on:
+      - recommendations
+    build:
+      context: graphs
+      dockerfile: Dockerfile
+    container_name: graphs
+    volumes:
+      - ./Resources:/usr/src/project/Resources

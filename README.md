@@ -1,8 +1,8 @@
-# temp-big-data
+# docker-big-data
 
-## Prerequities:
-```bash
-pip install -r requirements.txt
-mkdir /home/{your_user_name}/.kaggle
-cp kaggle.json /home/{your_user_name}/.kaggle
+## How to run:
+```
+rm -r Resource # Important if Resource folder is present
+docker-compose build
+docker-compose up
 ```

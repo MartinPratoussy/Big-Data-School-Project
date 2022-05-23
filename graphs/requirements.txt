@@ -1,0 +1,9 @@
+halo
+requests
+sklearn
+webcolors
+tqdm
+Pillow
+tk
+matplotlib==3.5.2
+kaggle
